@@ -1,0 +1,180 @@
+﻿@model EvDekorasyonu.Application.Features.Queries.ViewModels.DekorViewModel
+
+@section css{
+    <link rel="stylesheet" href="~/css/recipe-detail.css">
+}
+
+<section class="hero" style="background-image: url(@Model.ImageUrl);"></section>
+
+<section class="recipe-detail" style="overflow-x: hidden;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="recipe-detail__header" data-aos="fade-up" data-aos-easing="ease-in-out"
+                     data-aos-delay="0">
+                    <h1 class="recipe-detail__heading">@Model.Name</h1>
+                    <p class="recipe-detail__date">@Model.CreatedDate.ToString("D")</p>
+                    <ul class="recipe-detail__rating">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < @Model.Star)
+                            {
+                                <li>
+                                    <i style="color: #fbb710" class="fas fa-star"></i>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <i style="color: #e0e3e4" class="fas fa-star"></i>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-5" data-aos="fade-right" data-aos-easing="linear" data-aos-delay="200">
+                <div class="recipe-detail__box">
+                    <div class="recipe-detail__summary">
+                        <p>Prep: 15 mins</p>
+                        <p>Cook: 30 mins</p>
+                        <p>Yields: 8 Servings</p>
+                    </div>
+                    <h2 class="recipe-detail__title">Ingredients</h2>
+                    <form class="recipe-detail__check-box">
+                        <ul class="recipe-detail__check-box-list">
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-1">
+                                    <label for="box-1" class="square">4 Tbsp (57 gr) butter</label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-2">
+                                    <label for="box-2" class="square">2 large eggs</label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-3">
+                                    <label for="box-3" class="square">
+                                        2 yogurt containers granulated
+                                        sugar
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-4">
+                                    <label for="box-4" class="square">
+                                        1 vanilla or plain yogurt, 170g
+                                        container
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-5">
+                                    <label for="box-5" class="square">White flour</label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-6">
+                                    <label for="box-6" class="square">1.5 yogurt containers milk</label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-7">
+                                    <label for="box-7" class="square">1/4 tsp cinnamon</label>
+                                </div>
+                            </li>
+
+                            <li class="recipe-detail__check-box-item">
+                                <div class="form-group">
+                                    <input type="checkbox" name="checkbox" id="box-8">
+                                    <label for="box-8" class="square">1 cup fresh blueberries </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <ul class="recipe-detail__content">
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-delay="200">
+                        <div class="recipe-detail__item">
+                            <h2 class="recipe-detail__number">01.</h2>
+                            <p class="recipe-detail__description">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
+                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim.
+                                Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque
+                                penatibus et magni.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-delay="300">
+                        <div class="recipe-detail__item">
+                            <h2 class="recipe-detail__number">02.</h2>
+                            <p class="recipe-detail__description">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Enim consectetur commodi blanditiis iure expedita nisi illo
+                                error inventore, voluptatem fugiat iste molestiae facere voluptatibus laborum
+                                officia quisquam odit laboriosam libero?
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-delay="400">
+                        <div class="recipe-detail__item">
+                            <h2 class="recipe-detail__number">03.</h2>
+                            <p class="recipe-detail__description">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Commodi accusamus dolore, et blanditiis sapiente aspernatur
+                                cupiditate ratione est vitae unde..
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-delay="500">
+                        <div class="recipe-detail__item">
+                            <h2 class="recipe-detail__number">04.</h2>
+                            <p class="recipe-detail__description">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Repellat officia dolorum ducimus molestiae saepe tenetur
+                                dolorem esse earum veritatis nam
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-left" data-aos-easing="linear" data-aos-delay="600">
+                        <div class="recipe-detail__item">
+                            <h2 class="recipe-detail__number">05.</h2>
+                            <p class="recipe-detail__description">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti. Vestibulum ac
+                                pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor enim.
+                                Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque
+                                penatibus et magni.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

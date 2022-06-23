@@ -1,0 +1,71 @@
+﻿@model System.Collections.Generic.IEnumerable<EvDekorasyonu.Application.Features.Queries.ViewModels.DekorViewModel>
+
+@section css{
+    <link rel="stylesheet" href="~/css/recipes.css">
+}
+
+<section class="hero">
+    <h1 class="hero__title">Dekor Önerileri</h1>
+</section>
+
+
+<section class="recipes-list">
+    <div class="container">
+        <div class="recipes-list__heading">
+            <h2 class="recipes-list__title">Son Dekor Önerileri</h2>
+        </div>
+
+        <div class="row">
+
+            @foreach (var dekor in Model)
+            {
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-easing="ease-in-out"
+                     data-aos-delay="100">
+                    <a href="/Recipe/RecipeDetail/@dekor.Id">
+                    <div class="recipes-list__item">
+                        <img src="@dekor.ImageUrl" alt="">
+                        <div class="recipes-list__info-background">
+                            <div class="recipes-list__info">
+                                <h3>@dekor.Name</h3>
+                                <div class="recipes-list__rating">
+                                    @for (int i = 0; i < 5; i++)
+                                    {
+                                        if (i < dekor.Star)
+                                        {
+                                            <i style="color: #fbb710" class="fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i style="color: #e0e3e4" class="fas fa-star"></i>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+
+        <div class="recipes-list__pagination">
+            <span>01</span>
+            <a href="#">02</a>
+            <a href="#">03</a>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    img:hover{
+        padding-left: 2px ;
+        padding-right: 2px ;
+        padding-bottom: 2px;
+        
+        box-shadow: #2c3c58;
+        animation-delay: inherit;
+    }
+    
+</style>
