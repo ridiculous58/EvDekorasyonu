@@ -3,7 +3,7 @@ using EvDekorasyonu.Application.Features.Queries.GetDekorById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace YemekTarifi.MVC.Controllers;
+namespace EvDekorasyonu.MVC.Controllers;
 
 public class DekorController : Controller
 {
@@ -15,14 +15,14 @@ public class DekorController : Controller
 
     public async Task<IActionResult> Dekors()
     {
-        var recipes = await  _mediator.Send(new GetDekorAllQuery());
-        return View(recipes);
+        var dekors = await _mediator.Send(new GetDekorAllQuery());
+        return View(dekors);
     }
-    
+
     public async Task<IActionResult> DekorDetail(string id)
     {
-        var recipe = await  _mediator.Send(new GetDekorByIdQuery(id));
-        return View(recipe);
+        var dekor = await _mediator.Send(new GetDekorByIdQuery(id));
+        return View(dekor);
     }
-    
+
 }

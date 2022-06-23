@@ -3,7 +3,7 @@ using EvDekorasyonu.Domain.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace YemekTarifi.MVC.Controllers
+namespace EvDekorasyonu.MVC.Controllers
 {
     public class IdentityController : Controller
     {
@@ -35,7 +35,7 @@ namespace YemekTarifi.MVC.Controllers
             if (registerDto == null)
                 return BadRequest();
 
-            await _identityService.Register(registerDto,new string[] { "Admin" });
+            await _identityService.Register(registerDto, new string[] { "Admin" });
 
             return RedirectToAction("Index", "Home");
         }
@@ -44,7 +44,7 @@ namespace YemekTarifi.MVC.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login()
         {
-            var loginDto = new LoginDto("ece@ece.com","Ece@1234",true);
+            var loginDto = new LoginDto("ece@ece.com", "Ece@1234", true);
             return View(loginDto);
         }
 
@@ -57,7 +57,7 @@ namespace YemekTarifi.MVC.Controllers
 
             await _identityService.Login(loginDto);
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()
